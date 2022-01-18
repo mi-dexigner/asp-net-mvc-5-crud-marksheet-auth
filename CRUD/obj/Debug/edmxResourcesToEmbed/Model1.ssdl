@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="authLoginModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="auth">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fullname" Type="varchar" MaxLength="255" />
+    <Property Name="email" Type="varchar" MaxLength="150" />
+    <Property Name="password" Type="varchar" MaxLength="120" />
+    <Property Name="phone" Type="varchar" MaxLength="200" />
+    <Property Name="profilepic" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="marksheet">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="255" />
+    <Property Name="LastName" Type="varchar" MaxLength="255" />
+    <Property Name="EnglishMark" Type="int" Nullable="false" />
+    <Property Name="MathMark" Type="int" Nullable="false" />
+    <Property Name="UrduMark" Type="int" Nullable="false" />
+    <Property Name="TotalMark" Type="int" Nullable="false" />
+    <Property Name="ObtainMark" Type="int" Nullable="false" />
+    <Property Name="Percentages" Type="float" Nullable="false" />
+    <Property Name="Grade" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="mediaImage">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FileName" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityContainer Name="authLoginModelStoreContainer">
+    <EntitySet Name="auth" EntityType="Self.auth" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="marksheet" EntityType="Self.marksheet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mediaImage" EntityType="Self.mediaImage" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

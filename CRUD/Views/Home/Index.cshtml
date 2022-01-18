@@ -1,0 +1,73 @@
+﻿@model IEnumerable<CRUD.auth>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>User List</h2>
+<p class="text-right">
+    @Html.ActionLink("Create New", "Account", null, new { @class = "btn btn-primary" })
+</p>
+@if (ViewBag.Message != null)
+{
+
+    <div class="alert alert-success" role="alert">
+        @ViewBag.Message
+    </div>
+}
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.fullname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.profilepic)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.phone)
+        </th>
+        <th></th>
+    </tr>
+
+
+    @if (Model != null && Model.Count() > 0)
+    {
+        foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fullname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.email)
+                </td>
+                <td>
+
+                    <div class="thumbnail">
+                        <img src="~/uploads/@Html.DisplayFor(modelItem => item.profilepic)" width="100" />
+                    </div>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.phone)
+                </td>
+                <td>
+                    <div class="btn-group" role="group" aria-label="...">
+                        @Html.ActionLink("Edit", "Edit", new { id = item.id }, new { @class = "btn btn-info" })
+                        @Html.ActionLink("Details", "Details", new { id = item.id }, new { @class = "btn btn-primary" })
+                        @Html.ActionLink("Delete", "Delete", new { id = item.id }, new { @class = "btn btn-danger" })
+                    </div>
+                </td>
+            </tr>
+        }
+    }
+    else
+    {
+        <td colspan="5" class="text-center"><div class="alert alert-danger"><b>No Data Available. Please Add Data By Click On Create Button</b></div></td>
+
+    }
+
+
+</table>

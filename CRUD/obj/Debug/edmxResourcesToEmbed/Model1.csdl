@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="authLoginModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="marksheet">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="EnglishMark" Type="Int32" Nullable="false" />
+    <Property Name="MathMark" Type="Int32" Nullable="false" />
+    <Property Name="UrduMark" Type="Int32" Nullable="false" />
+    <Property Name="TotalMark" Type="Int32" Nullable="false" />
+    <Property Name="ObtainMark" Type="Int32" Nullable="false" />
+    <Property Name="Percentages" Type="Double" Nullable="false" />
+    <Property Name="Grade" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="authLoginEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="marksheets" EntityType="Self.marksheet" />
+    <EntitySet Name="mediaImages" EntityType="authLoginModel.mediaImage" />
+    <EntitySet Name="auths" EntityType="authLoginModel.auth" />
+  </EntityContainer>
+  <EntityType Name="mediaImage">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FileName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="auth">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fullname" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="phone" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="profilepic" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

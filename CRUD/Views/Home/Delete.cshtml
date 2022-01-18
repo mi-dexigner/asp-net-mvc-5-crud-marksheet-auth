@@ -1,0 +1,33 @@
+﻿@model CRUD.auth
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Full Name</th>
+            <th>email</th>
+            <th>phone</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.fullname</td>
+            <td>@Model.email</td>
+            <td>@Model.phone</td>
+        </tr>
+    </tbody>
+</table>
+@Html.ActionLink("Back To List", "Index");
+
+
+@using (Html.BeginForm())
+            {
+    @Html.AntiForgeryToken()
+    <div class="form-actions no-colore">
+        <input type="submit" class="btn btn-danger" value="Delete" />
+    </div>
+
+            }

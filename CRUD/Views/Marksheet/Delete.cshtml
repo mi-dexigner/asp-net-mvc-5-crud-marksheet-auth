@@ -1,0 +1,42 @@
+﻿@model CRUD.marksheet
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div class="row">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Full Name</th>
+                <th>Math</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.FirstName @Model.LastName</td>
+                <td>@Model.MathMark</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="row">
+    <div class="pull-left">
+        @Html.ActionLink("Back To List", "Index", null, new { @class = "btn btn-info" })
+    </div>
+
+
+    <div class="pull-right">
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-actions no-colore">
+                <input type="submit" class="btn btn-danger" value="Delete" />
+            </div>
+
+        }
+    </div>
+</div>
+
+

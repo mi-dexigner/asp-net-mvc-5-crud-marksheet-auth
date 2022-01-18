@@ -1,0 +1,29 @@
+﻿@model IEnumerable<CRUD.mediaImage>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Image Upload</h2>
+
+<form class="form-horizontal" action="~/Image/Index" method="post" enctype="multipart/form-data">
+
+    <div class="form-group">
+        <label for="file">File</label>
+        <input type="file" class="form-control" name="img" />
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Upload" />
+    </div>
+    @if (ViewBag.Message != null) {
+<div class="alert alert-success">@ViewBag.Message</div>
+    }
+    @if (Model != null)
+    {
+        foreach (var item in Model) {
+<div class="thumbnail">
+    <img src="~/uploads/@Html.DisplayFor(modelItem => item.FileName)" width="100" />
+</div>
+        }
+    }
+    </form>

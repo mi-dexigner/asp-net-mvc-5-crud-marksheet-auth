@@ -1,0 +1,94 @@
+﻿@model IEnumerable<CRUD.marksheet>
+
+@{
+    ViewBag.Title = "Marksheet";
+}
+
+<h2>Marksheet</h2>
+
+<p class="text-right">
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EnglishMark)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MathMark)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UrduMark)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalMark)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ObtainMark)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Percentages)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Grade)
+        </th>
+        <th></th>
+    </tr>
+    @if (Model != null && Model.Count() > 0)
+    {
+        foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EnglishMark)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MathMark)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UrduMark)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalMark)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ObtainMark)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Percentages) %
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Grade)
+                </td>
+                <td>
+                    <div class="btn-group" role="group" aria-label="...">
+                        @Html.ActionLink("Edit", "Edit", new { id = item.id }, new { @class = "btn btn-info" })
+                        @Html.ActionLink("Details", "Details", new { id = item.id }, new { @class = "btn btn-primary" })
+                        @Html.ActionLink("Delete", "Delete", new { id = item.id }, new { @class = "btn btn-danger" })
+                    </div>
+                </td>
+            </tr>
+        }
+
+
+
+    }
+    else
+    {
+        <td colspan="10" class="text-center"><div class="alert alert-danger"><b>No Data Available. Please Add Data By Click On Create Button</b></div></td>
+
+    }
+
+</table>

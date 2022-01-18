@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a78f5219797c42eabd1d590248fdf631" Name="Diagram1">
+        <EntityTypeShape EntityType="authLoginModel.marksheet" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="authLoginModel.mediaImage" Width="1.5" PointX="5.25" PointY="3.25" />
+        <EntityTypeShape EntityType="authLoginModel.auth" Width="1.5" PointX="0.5" PointY="1.375" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
